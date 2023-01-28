@@ -15,6 +15,7 @@ const PortalMaterial = shaderMaterial(
   portalFragmentShader
 );
 
+//* use the extend function to add the custom shader to the global scope, to use as a JSX element like portalMaterial
 extend({ PortalMaterial });
 
 export default function Experience() {

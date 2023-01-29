@@ -31,6 +31,7 @@ export default function Experience() {
   });
 
   const model = useGLTF('./model/chocker.glb');
+  const plug = useGLTF('./model/plug.glb');
 
   console.log(model);
 
@@ -42,15 +43,12 @@ export default function Experience() {
         <mesh geometry={nodes.baked.geometry}>
           <meshBasicMaterial map={bakedTexture} />
         </mesh>
-
         <mesh geometry={nodes.poleLightA.geometry} position={nodes.poleLightA.position}>
           <meshBasicMaterial color='#ffffe5' />
         </mesh>
-
         <mesh geometry={nodes.poleLightB.geometry} position={nodes.poleLightB.position}>
           <meshBasicMaterial color='#ffffe5' />
         </mesh>
-
         <mesh
           geometry={nodes.portalLight.geometry}
           position={nodes.portalLight.position}
@@ -58,9 +56,9 @@ export default function Experience() {
         >
           <portalMaterial ref={portalMaterial} />
         </mesh>
-
         <Sparkles size={6} scale={[4, 2, 4]} position-y={1} speed={0.2} count={40} />
         <primitive object={model.scene} scale={0.2} position={[0, 0.1, -0.5]} rotation={[0, 0, 1]} />
+        <primitive object={plug.scene} scale={0.2} position={[0, 0.5, -0.5]} rotation={[0, 0, 1]} />
       </Center>
 
       {/* <primitive object={model.scene} scale={0.2} /> */}
